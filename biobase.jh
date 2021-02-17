@@ -1,0 +1,158 @@
+
+entity GerenciaId {
+	loginName String,
+    dataGeracao Instant,
+    status String
+}
+
+entity Entrega {
+	loginName String,
+    data Date
+}
+
+entity Recebimento {
+	loginName String,
+    data Date
+}
+
+entity VoucherInfo {
+	loginName String,
+    data Date
+}
+
+entity Taxonomy {
+	phylum String,
+    tclass String,
+    torder String,
+    family String,
+    subfamily String,    
+    genus String,
+    specie String,    
+    identif String,
+    identifierEmail String,    
+    identifierInstitution String,
+    identificationMethod String,
+    taxonomyNotes String
+}
+
+entity CollectionData {
+	collector String,
+    collectionDate Date,
+    countryOcean String,
+    stateProvince String,
+    region String,    
+    sector String,
+    exactSite String,    
+    identif String,
+    latitude String,    
+    longitude String,
+    elevation String,
+    depth String,
+    elevationPrecision String,
+    depthPrecision String,
+    gpsSource String,
+    coordinateAccuracy String,
+    eventTime String,
+    collectionDateOccuracy String,
+    habitat String,
+    samplingProtocol String,
+    collectionNotes String,
+    siteCode String,
+    collectionEventId String
+}
+
+entity Barcode {
+	marcador String,
+    sequencia TextBlob,
+    data Date
+}
+
+entity Sequenciamento {
+	posiao String,
+    status Integer
+}
+
+entity Placa {
+	dataMontagem Data,
+	marcador String,
+    sequencia TextBlob,
+    data Date,
+    status Integer max(1)
+}
+
+entity TraceFile {
+	dirPhd String,
+	dirAb String
+}
+
+entity ImageData {
+	nameImage String,
+    imageFile String,
+    originalSpecimen String,
+    viewMetadata String,
+    caption String,
+    measurement String,
+    measurementType String,
+    processId String,
+    licenseHolder String,
+    license String,
+    licenseYear String,
+    licenseInstitution String,
+    licenseContact String,
+    photographer String
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+relationship ManyToOne {
+	GerenciaId{entrega} to Entrega,
+    GerenciaId{recebimento} to Recebimento
+    
+}
+
+relationship OneToOne {
+	GerenciaId{voucherInfo} to VoucherInfo
+}
+
+relationship OneToOne {
+	Taxonomy{voucherInfo} to VoucherInfo
+}
+
+relationship OneToOne {
+	CollectionData{voucherInfo} to VoucherInfo
+}
+
+relationship OneToOne {
+	Barcode{idSample} to GerenciaId
+}
+
+relationship OneToOne {
+	Sequenciamento{idSample} to GerenciaId,
+    Sequenciamento{idPlaca} to Placa
+}
+
+relationship OneToOne {
+	TraceFile{idSample} to GerenciaId,
+    TraceFile{idSequenciamento} to Sequenciamento
+}
+
+relationship OneToOne {
+	ImageData{idSample} to GerenciaId 
+}
+
+
+
+// Set pagination options
+//--paginate JobHistory, Employee with infinite-scroll
+//--paginate Job with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl //except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
