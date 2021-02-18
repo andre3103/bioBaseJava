@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="voucherInfo">
+            <h2><span jhiTranslate="bioBaseApplicationApp.voucherInfo.detail.title">Voucher Info</span> {{ voucherInfo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bioBaseApplicationApp.voucherInfo.loginName">Login Name</span></dt>
+                <dd>
+                    <span>{{ voucherInfo.loginName }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.voucherInfo.data">Data</span></dt>
+                <dd>
+                    <span>{{ voucherInfo.data }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/voucher-info', voucherInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

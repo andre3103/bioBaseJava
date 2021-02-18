@@ -7,6 +7,17 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "gerenciaId": "Gerencia Id",
+        "entrega": "Entrega",
+        "recebimento": "Recebimento",
+        "voucherInfo": "Voucher Info",
+        "taxonomy": "Taxonomy",
+        "collectionData": "Collection Data",
+        "barcode": "Barcode",
+        "sequenciamento": "Sequenciamento",
+        "placa": "Placa",
+        "traceFile": "Trace File",
+        "imageData": "Image Data",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

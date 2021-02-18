@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="gerenciaId">
+            <h2><span jhiTranslate="bioBaseApplicationApp.gerenciaId.detail.title">Gerencia Id</span> {{ gerenciaId.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bioBaseApplicationApp.gerenciaId.loginName">Login Name</span></dt>
+                <dd>
+                    <span>{{ gerenciaId.loginName }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.gerenciaId.dataGeracao">Data Geracao</span></dt>
+                <dd>
+                    <span>{{ gerenciaId.dataGeracao }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.gerenciaId.status">Status</span></dt>
+                <dd>
+                    <span>{{ gerenciaId.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.gerenciaId.voucherInfo">Voucher Info</span></dt>
+                <dd>
+                    <div *ngIf="gerenciaId.voucherInfo">
+                        <a [routerLink]="['/voucher-info', gerenciaId.voucherInfo?.id, 'view']">{{ gerenciaId.voucherInfo?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.gerenciaId.entrega">Entrega</span></dt>
+                <dd>
+                    <div *ngIf="gerenciaId.entrega">
+                        <a [routerLink]="['/entrega', gerenciaId.entrega?.id, 'view']">{{ gerenciaId.entrega?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.gerenciaId.recebimento">Recebimento</span></dt>
+                <dd>
+                    <div *ngIf="gerenciaId.recebimento">
+                        <a [routerLink]="['/recebimento', gerenciaId.recebimento?.id, 'view']">{{ gerenciaId.recebimento?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/gerencia-id', gerenciaId.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

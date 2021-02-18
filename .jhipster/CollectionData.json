@@ -1,0 +1,118 @@
+{
+  "name": "CollectionData",
+  "fields": [
+    {
+      "fieldName": "collector",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "collectionDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "countryOcean",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateProvince",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "region",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sector",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "exactSite",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "latitude",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "elevation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "depth",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "elevationPrecision",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "depthPrecision",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gpsSource",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "coordinateAccuracy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "eventTime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "collectionDateOccuracy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "habitat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "samplingProtocol",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "collectionNotes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "siteCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "collectionEventId",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "voucherInfo",
+      "otherEntityRelationshipName": "collectionData",
+      "relationshipName": "voucherInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210218003157",
+  "entityTableName": "collection_data",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

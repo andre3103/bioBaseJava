@@ -1,0 +1,38 @@
+{
+  "name": "Barcode",
+  "fields": [
+    {
+      "fieldName": "marcador",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sequencia",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "gerenciaId",
+      "otherEntityRelationshipName": "barcode",
+      "relationshipName": "idSample",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210218003257",
+  "entityTableName": "barcode",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

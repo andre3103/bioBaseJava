@@ -1,0 +1,41 @@
+{
+  "name": "Placa",
+  "fields": [
+    {
+      "fieldName": "dataMontagem",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "marcador",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sequencia",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "max"
+      ],
+      "fieldValidateRulesMax": "1"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210218003457",
+  "entityTableName": "placa",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

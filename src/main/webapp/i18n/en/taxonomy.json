@@ -1,0 +1,34 @@
+{
+  "bioBaseApplicationApp": {
+    "taxonomy": {
+      "home": {
+        "title": "Taxonomies",
+        "createLabel": "Create a new Taxonomy",
+        "createOrEditLabel": "Create or edit a Taxonomy",
+        "notFound": "No Taxonomies found"
+      },
+      "created": "A new Taxonomy is created with identifier {{ param }}",
+      "updated": "A Taxonomy is updated with identifier {{ param }}",
+      "deleted": "A Taxonomy is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Taxonomy {{ id }}?"
+      },
+      "detail": {
+        "title": "Taxonomy"
+      },
+      "phylum": "Phylum",
+      "tclass": "Tclass",
+      "torder": "Torder",
+      "family": "Family",
+      "subfamily": "Subfamily",
+      "genus": "Genus",
+      "specie": "Specie",
+      "identif": "Identif",
+      "identifierEmail": "Identifier Email",
+      "identifierInstitution": "Identifier Institution",
+      "identificationMethod": "Identification Method",
+      "taxonomyNotes": "Taxonomy Notes",
+      "voucherInfo": "Voucher Info"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-gerencia-id-heading" jhiTranslate="bioBaseApplicationApp.gerenciaId.home.createOrEditLabel">Create or edit a Gerencia Id</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.gerenciaId.loginName" for="field_loginName">Login Name</label>
+                    <input type="text" class="form-control" name="loginName" id="field_loginName"
+                           formControlName="loginName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.gerenciaId.dataGeracao" for="field_dataGeracao">Data Geracao</label>
+                    <div class="d-flex">
+                        <input id="field_dataGeracao" type="datetime-local" class="form-control" name="dataGeracao" formControlName="dataGeracao" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.gerenciaId.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.gerenciaId.voucherInfo" for="field_voucherInfo">Voucher Info</label>
+                    <select class="form-control" id="field_voucherInfo" name="voucherInfo" formControlName="voucherInfo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="voucherInfoOption.id === editForm.get('voucherInfo')!.value?.id ? editForm.get('voucherInfo')!.value : voucherInfoOption" *ngFor="let voucherInfoOption of voucherinfos; trackBy: trackById">{{ voucherInfoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.gerenciaId.entrega" for="field_entrega">Entrega</label>
+                    <select class="form-control" id="field_entrega" name="entrega" formControlName="entrega">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="entregaOption.id === editForm.get('entrega')!.value?.id ? editForm.get('entrega')!.value : entregaOption" *ngFor="let entregaOption of entregas; trackBy: trackById">{{ entregaOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.gerenciaId.recebimento" for="field_recebimento">Recebimento</label>
+                    <select class="form-control" id="field_recebimento" name="recebimento" formControlName="recebimento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="recebimentoOption.id === editForm.get('recebimento')!.value?.id ? editForm.get('recebimento')!.value : recebimentoOption" *ngFor="let recebimentoOption of recebimentos; trackBy: trackById">{{ recebimentoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

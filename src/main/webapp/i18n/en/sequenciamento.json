@@ -1,0 +1,25 @@
+{
+  "bioBaseApplicationApp": {
+    "sequenciamento": {
+      "home": {
+        "title": "Sequenciamentos",
+        "createLabel": "Create a new Sequenciamento",
+        "createOrEditLabel": "Create or edit a Sequenciamento",
+        "notFound": "No Sequenciamentos found"
+      },
+      "created": "A new Sequenciamento is created with identifier {{ param }}",
+      "updated": "A Sequenciamento is updated with identifier {{ param }}",
+      "deleted": "A Sequenciamento is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sequenciamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Sequenciamento"
+      },
+      "posiao": "Posiao",
+      "status": "Status",
+      "idSample": "Id Sample",
+      "idPlaca": "Id Placa"
+    }
+  }
+}

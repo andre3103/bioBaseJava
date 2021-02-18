@@ -1,0 +1,27 @@
+{
+  "bioBaseApplicationApp": {
+    "gerenciaId": {
+      "home": {
+        "title": "Gerencia Ids",
+        "createLabel": "Create a new Gerencia Id",
+        "createOrEditLabel": "Create or edit a Gerencia Id",
+        "notFound": "No Gerencia Ids found"
+      },
+      "created": "A new Gerencia Id is created with identifier {{ param }}",
+      "updated": "A Gerencia Id is updated with identifier {{ param }}",
+      "deleted": "A Gerencia Id is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Gerencia Id {{ id }}?"
+      },
+      "detail": {
+        "title": "Gerencia Id"
+      },
+      "loginName": "Login Name",
+      "dataGeracao": "Data Geracao",
+      "status": "Status",
+      "voucherInfo": "Voucher Info",
+      "entrega": "Entrega",
+      "recebimento": "Recebimento"
+    }
+  }
+}

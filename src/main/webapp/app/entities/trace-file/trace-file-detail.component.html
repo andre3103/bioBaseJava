@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="traceFile">
+            <h2><span jhiTranslate="bioBaseApplicationApp.traceFile.detail.title">Trace File</span> {{ traceFile.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bioBaseApplicationApp.traceFile.dirPhd">Dir Phd</span></dt>
+                <dd>
+                    <span>{{ traceFile.dirPhd }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.traceFile.dirAb">Dir Ab</span></dt>
+                <dd>
+                    <span>{{ traceFile.dirAb }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.traceFile.idSample">Id Sample</span></dt>
+                <dd>
+                    <div *ngIf="traceFile.idSample">
+                        <a [routerLink]="['/gerencia-id', traceFile.idSample?.id, 'view']">{{ traceFile.idSample?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.traceFile.idSequenciamento">Id Sequenciamento</span></dt>
+                <dd>
+                    <div *ngIf="traceFile.idSequenciamento">
+                        <a [routerLink]="['/sequenciamento', traceFile.idSequenciamento?.id, 'view']">{{ traceFile.idSequenciamento?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/trace-file', traceFile.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

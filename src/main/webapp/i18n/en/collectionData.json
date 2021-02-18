@@ -1,0 +1,45 @@
+{
+  "bioBaseApplicationApp": {
+    "collectionData": {
+      "home": {
+        "title": "Collection Data",
+        "createLabel": "Create a new Collection Data",
+        "createOrEditLabel": "Create or edit a Collection Data",
+        "notFound": "No Collection Data found"
+      },
+      "created": "A new Collection Data is created with identifier {{ param }}",
+      "updated": "A Collection Data is updated with identifier {{ param }}",
+      "deleted": "A Collection Data is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Collection Data {{ id }}?"
+      },
+      "detail": {
+        "title": "Collection Data"
+      },
+      "collector": "Collector",
+      "collectionDate": "Collection Date",
+      "countryOcean": "Country Ocean",
+      "stateProvince": "State Province",
+      "region": "Region",
+      "sector": "Sector",
+      "exactSite": "Exact Site",
+      "identif": "Identif",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "elevation": "Elevation",
+      "depth": "Depth",
+      "elevationPrecision": "Elevation Precision",
+      "depthPrecision": "Depth Precision",
+      "gpsSource": "Gps Source",
+      "coordinateAccuracy": "Coordinate Accuracy",
+      "eventTime": "Event Time",
+      "collectionDateOccuracy": "Collection Date Occuracy",
+      "habitat": "Habitat",
+      "samplingProtocol": "Sampling Protocol",
+      "collectionNotes": "Collection Notes",
+      "siteCode": "Site Code",
+      "collectionEventId": "Collection Event Id",
+      "voucherInfo": "Voucher Info"
+    }
+  }
+}

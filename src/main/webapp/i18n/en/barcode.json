@@ -1,0 +1,25 @@
+{
+  "bioBaseApplicationApp": {
+    "barcode": {
+      "home": {
+        "title": "Barcodes",
+        "createLabel": "Create a new Barcode",
+        "createOrEditLabel": "Create or edit a Barcode",
+        "notFound": "No Barcodes found"
+      },
+      "created": "A new Barcode is created with identifier {{ param }}",
+      "updated": "A Barcode is updated with identifier {{ param }}",
+      "deleted": "A Barcode is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Barcode {{ id }}?"
+      },
+      "detail": {
+        "title": "Barcode"
+      },
+      "marcador": "Marcador",
+      "sequencia": "Sequencia",
+      "data": "Data",
+      "idSample": "Id Sample"
+    }
+  }
+}

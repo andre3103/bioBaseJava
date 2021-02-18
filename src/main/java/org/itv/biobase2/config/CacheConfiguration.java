@@ -47,6 +47,17 @@ public class CacheConfiguration {
             createCache(cm, org.itv.biobase2.domain.User.class.getName());
             createCache(cm, org.itv.biobase2.domain.Authority.class.getName());
             createCache(cm, org.itv.biobase2.domain.User.class.getName() + ".authorities");
+            createCache(cm, org.itv.biobase2.domain.GerenciaId.class.getName());
+            createCache(cm, org.itv.biobase2.domain.Entrega.class.getName());
+            createCache(cm, org.itv.biobase2.domain.Recebimento.class.getName());
+            createCache(cm, org.itv.biobase2.domain.VoucherInfo.class.getName());
+            createCache(cm, org.itv.biobase2.domain.Taxonomy.class.getName());
+            createCache(cm, org.itv.biobase2.domain.CollectionData.class.getName());
+            createCache(cm, org.itv.biobase2.domain.Barcode.class.getName());
+            createCache(cm, org.itv.biobase2.domain.Sequenciamento.class.getName());
+            createCache(cm, org.itv.biobase2.domain.Placa.class.getName());
+            createCache(cm, org.itv.biobase2.domain.TraceFile.class.getName());
+            createCache(cm, org.itv.biobase2.domain.ImageData.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

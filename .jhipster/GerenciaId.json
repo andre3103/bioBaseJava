@@ -1,0 +1,52 @@
+{
+  "name": "GerenciaId",
+  "fields": [
+    {
+      "fieldName": "loginName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataGeracao",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "voucherInfo",
+      "otherEntityRelationshipName": "gerenciaId",
+      "relationshipName": "voucherInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "entrega",
+      "otherEntityRelationshipName": "gerenciaId",
+      "relationshipName": "entrega",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "recebimento",
+      "otherEntityRelationshipName": "gerenciaId",
+      "relationshipName": "recebimento",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210218002657",
+  "entityTableName": "gerencia_id",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,118 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-image-data-heading" jhiTranslate="bioBaseApplicationApp.imageData.home.createOrEditLabel">Create or edit a Image Data</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.nameImage" for="field_nameImage">Name Image</label>
+                    <input type="text" class="form-control" name="nameImage" id="field_nameImage"
+                           formControlName="nameImage"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.imageFile" for="field_imageFile">Image File</label>
+                    <input type="text" class="form-control" name="imageFile" id="field_imageFile"
+                           formControlName="imageFile"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.originalSpecimen" for="field_originalSpecimen">Original Specimen</label>
+                    <input type="text" class="form-control" name="originalSpecimen" id="field_originalSpecimen"
+                           formControlName="originalSpecimen"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.viewMetadata" for="field_viewMetadata">View Metadata</label>
+                    <input type="text" class="form-control" name="viewMetadata" id="field_viewMetadata"
+                           formControlName="viewMetadata"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.caption" for="field_caption">Caption</label>
+                    <input type="text" class="form-control" name="caption" id="field_caption"
+                           formControlName="caption"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.measurement" for="field_measurement">Measurement</label>
+                    <input type="text" class="form-control" name="measurement" id="field_measurement"
+                           formControlName="measurement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.measurementType" for="field_measurementType">Measurement Type</label>
+                    <input type="text" class="form-control" name="measurementType" id="field_measurementType"
+                           formControlName="measurementType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.processId" for="field_processId">Process Id</label>
+                    <input type="text" class="form-control" name="processId" id="field_processId"
+                           formControlName="processId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.licenseHolder" for="field_licenseHolder">License Holder</label>
+                    <input type="text" class="form-control" name="licenseHolder" id="field_licenseHolder"
+                           formControlName="licenseHolder"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.license" for="field_license">License</label>
+                    <input type="text" class="form-control" name="license" id="field_license"
+                           formControlName="license"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.licenseYear" for="field_licenseYear">License Year</label>
+                    <input type="text" class="form-control" name="licenseYear" id="field_licenseYear"
+                           formControlName="licenseYear"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.licenseInstitution" for="field_licenseInstitution">License Institution</label>
+                    <input type="text" class="form-control" name="licenseInstitution" id="field_licenseInstitution"
+                           formControlName="licenseInstitution"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.licenseContact" for="field_licenseContact">License Contact</label>
+                    <input type="text" class="form-control" name="licenseContact" id="field_licenseContact"
+                           formControlName="licenseContact"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.photographer" for="field_photographer">Photographer</label>
+                    <input type="text" class="form-control" name="photographer" id="field_photographer"
+                           formControlName="photographer"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.imageData.idSample" for="field_idSample">Id Sample</label>
+                    <select class="form-control" id="field_idSample" name="idSample" formControlName="idSample">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="gerenciaIdOption.id === editForm.get('idSample')!.value?.id ? editForm.get('idSample')!.value : gerenciaIdOption" *ngFor="let gerenciaIdOption of idsamples; trackBy: trackById">{{ gerenciaIdOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
