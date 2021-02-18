@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity GerenciaId.
+    -->
+    <changeSet id="20210218002657-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="voucher_info_id"
+                                 baseTableName="gerencia_id"
+                                 constraintName="fk_gerencia_id_voucher_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="voucher_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="entrega_id"
+                                 baseTableName="gerencia_id"
+                                 constraintName="fk_gerencia_id_entrega_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="entrega"/>
+
+        <addForeignKeyConstraint baseColumnNames="recebimento_id"
+                                 baseTableName="gerencia_id"
+                                 constraintName="fk_gerencia_id_recebimento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="recebimento"/>
+
+    </changeSet>
+</databaseChangeLog>

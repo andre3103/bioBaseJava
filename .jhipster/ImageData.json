@@ -1,0 +1,82 @@
+{
+  "name": "ImageData",
+  "fields": [
+    {
+      "fieldName": "nameImage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imageFile",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "originalSpecimen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "viewMetadata",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "caption",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "measurement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "measurementType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "processId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "licenseHolder",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "license",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "licenseYear",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "licenseInstitution",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "licenseContact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "photographer",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "gerenciaId",
+      "otherEntityRelationshipName": "imageData",
+      "relationshipName": "idSample",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210218003657",
+  "entityTableName": "image_data",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

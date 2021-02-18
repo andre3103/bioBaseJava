@@ -1,0 +1,74 @@
+{
+  "name": "Taxonomy",
+  "fields": [
+    {
+      "fieldName": "phylum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tclass",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "torder",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "family",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subfamily",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "genus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "specie",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identifierEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identifierInstitution",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identificationMethod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxonomyNotes",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "voucherInfo",
+      "otherEntityRelationshipName": "taxonomy",
+      "relationshipName": "voucherInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210218003057",
+  "entityTableName": "taxonomy",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

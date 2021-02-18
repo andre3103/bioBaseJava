@@ -1,0 +1,42 @@
+{
+  "name": "Sequenciamento",
+  "fields": [
+    {
+      "fieldName": "posiao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "gerenciaId",
+      "otherEntityRelationshipName": "sequenciamento",
+      "relationshipName": "idSample",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "placa",
+      "otherEntityRelationshipName": "sequenciamento",
+      "relationshipName": "idPlaca",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210218003357",
+  "entityTableName": "sequenciamento",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

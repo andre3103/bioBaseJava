@@ -1,0 +1,124 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="collectionData">
+            <h2><span jhiTranslate="bioBaseApplicationApp.collectionData.detail.title">Collection Data</span> {{ collectionData.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.collector">Collector</span></dt>
+                <dd>
+                    <span>{{ collectionData.collector }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.collectionDate">Collection Date</span></dt>
+                <dd>
+                    <span>{{ collectionData.collectionDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.countryOcean">Country Ocean</span></dt>
+                <dd>
+                    <span>{{ collectionData.countryOcean }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.stateProvince">State Province</span></dt>
+                <dd>
+                    <span>{{ collectionData.stateProvince }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.region">Region</span></dt>
+                <dd>
+                    <span>{{ collectionData.region }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.sector">Sector</span></dt>
+                <dd>
+                    <span>{{ collectionData.sector }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.exactSite">Exact Site</span></dt>
+                <dd>
+                    <span>{{ collectionData.exactSite }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.identif">Identif</span></dt>
+                <dd>
+                    <span>{{ collectionData.identif }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.latitude">Latitude</span></dt>
+                <dd>
+                    <span>{{ collectionData.latitude }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.longitude">Longitude</span></dt>
+                <dd>
+                    <span>{{ collectionData.longitude }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.elevation">Elevation</span></dt>
+                <dd>
+                    <span>{{ collectionData.elevation }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.depth">Depth</span></dt>
+                <dd>
+                    <span>{{ collectionData.depth }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.elevationPrecision">Elevation Precision</span></dt>
+                <dd>
+                    <span>{{ collectionData.elevationPrecision }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.depthPrecision">Depth Precision</span></dt>
+                <dd>
+                    <span>{{ collectionData.depthPrecision }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.gpsSource">Gps Source</span></dt>
+                <dd>
+                    <span>{{ collectionData.gpsSource }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.coordinateAccuracy">Coordinate Accuracy</span></dt>
+                <dd>
+                    <span>{{ collectionData.coordinateAccuracy }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.eventTime">Event Time</span></dt>
+                <dd>
+                    <span>{{ collectionData.eventTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.collectionDateOccuracy">Collection Date Occuracy</span></dt>
+                <dd>
+                    <span>{{ collectionData.collectionDateOccuracy }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.habitat">Habitat</span></dt>
+                <dd>
+                    <span>{{ collectionData.habitat }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.samplingProtocol">Sampling Protocol</span></dt>
+                <dd>
+                    <span>{{ collectionData.samplingProtocol }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.collectionNotes">Collection Notes</span></dt>
+                <dd>
+                    <span>{{ collectionData.collectionNotes }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.siteCode">Site Code</span></dt>
+                <dd>
+                    <span>{{ collectionData.siteCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.collectionEventId">Collection Event Id</span></dt>
+                <dd>
+                    <span>{{ collectionData.collectionEventId }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.collectionData.voucherInfo">Voucher Info</span></dt>
+                <dd>
+                    <div *ngIf="collectionData.voucherInfo">
+                        <a [routerLink]="['/voucher-info', collectionData.voucherInfo?.id, 'view']">{{ collectionData.voucherInfo?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/collection-data', collectionData.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

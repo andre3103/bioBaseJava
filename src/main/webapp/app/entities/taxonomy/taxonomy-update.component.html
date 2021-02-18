@@ -1,0 +1,106 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-taxonomy-heading" jhiTranslate="bioBaseApplicationApp.taxonomy.home.createOrEditLabel">Create or edit a Taxonomy</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.phylum" for="field_phylum">Phylum</label>
+                    <input type="text" class="form-control" name="phylum" id="field_phylum"
+                           formControlName="phylum"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.tclass" for="field_tclass">Tclass</label>
+                    <input type="text" class="form-control" name="tclass" id="field_tclass"
+                           formControlName="tclass"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.torder" for="field_torder">Torder</label>
+                    <input type="text" class="form-control" name="torder" id="field_torder"
+                           formControlName="torder"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.family" for="field_family">Family</label>
+                    <input type="text" class="form-control" name="family" id="field_family"
+                           formControlName="family"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.subfamily" for="field_subfamily">Subfamily</label>
+                    <input type="text" class="form-control" name="subfamily" id="field_subfamily"
+                           formControlName="subfamily"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.genus" for="field_genus">Genus</label>
+                    <input type="text" class="form-control" name="genus" id="field_genus"
+                           formControlName="genus"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.specie" for="field_specie">Specie</label>
+                    <input type="text" class="form-control" name="specie" id="field_specie"
+                           formControlName="specie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.identif" for="field_identif">Identif</label>
+                    <input type="text" class="form-control" name="identif" id="field_identif"
+                           formControlName="identif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.identifierEmail" for="field_identifierEmail">Identifier Email</label>
+                    <input type="text" class="form-control" name="identifierEmail" id="field_identifierEmail"
+                           formControlName="identifierEmail"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.identifierInstitution" for="field_identifierInstitution">Identifier Institution</label>
+                    <input type="text" class="form-control" name="identifierInstitution" id="field_identifierInstitution"
+                           formControlName="identifierInstitution"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.identificationMethod" for="field_identificationMethod">Identification Method</label>
+                    <input type="text" class="form-control" name="identificationMethod" id="field_identificationMethod"
+                           formControlName="identificationMethod"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.taxonomyNotes" for="field_taxonomyNotes">Taxonomy Notes</label>
+                    <input type="text" class="form-control" name="taxonomyNotes" id="field_taxonomyNotes"
+                           formControlName="taxonomyNotes"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.taxonomy.voucherInfo" for="field_voucherInfo">Voucher Info</label>
+                    <select class="form-control" id="field_voucherInfo" name="voucherInfo" formControlName="voucherInfo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="voucherInfoOption.id === editForm.get('voucherInfo')!.value?.id ? editForm.get('voucherInfo')!.value : voucherInfoOption" *ngFor="let voucherInfoOption of voucherinfos; trackBy: trackById">{{ voucherInfoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

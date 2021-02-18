@@ -1,0 +1,42 @@
+{
+  "name": "TraceFile",
+  "fields": [
+    {
+      "fieldName": "dirPhd",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dirAb",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "gerenciaId",
+      "otherEntityRelationshipName": "traceFile",
+      "relationshipName": "idSample",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "sequenciamento",
+      "otherEntityRelationshipName": "traceFile",
+      "relationshipName": "idSequenciamento",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210218003557",
+  "entityTableName": "trace_file",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

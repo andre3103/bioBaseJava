@@ -1,0 +1,25 @@
+{
+  "bioBaseApplicationApp": {
+    "traceFile": {
+      "home": {
+        "title": "Trace Files",
+        "createLabel": "Create a new Trace File",
+        "createOrEditLabel": "Create or edit a Trace File",
+        "notFound": "No Trace Files found"
+      },
+      "created": "A new Trace File is created with identifier {{ param }}",
+      "updated": "A Trace File is updated with identifier {{ param }}",
+      "deleted": "A Trace File is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Trace File {{ id }}?"
+      },
+      "detail": {
+        "title": "Trace File"
+      },
+      "dirPhd": "Dir Phd",
+      "dirAb": "Dir Ab",
+      "idSample": "Id Sample",
+      "idSequenciamento": "Id Sequenciamento"
+    }
+  }
+}

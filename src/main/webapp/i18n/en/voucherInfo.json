@@ -1,0 +1,23 @@
+{
+  "bioBaseApplicationApp": {
+    "voucherInfo": {
+      "home": {
+        "title": "Voucher Infos",
+        "createLabel": "Create a new Voucher Info",
+        "createOrEditLabel": "Create or edit a Voucher Info",
+        "notFound": "No Voucher Infos found"
+      },
+      "created": "A new Voucher Info is created with identifier {{ param }}",
+      "updated": "A Voucher Info is updated with identifier {{ param }}",
+      "deleted": "A Voucher Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Voucher Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Voucher Info"
+      },
+      "loginName": "Login Name",
+      "data": "Data"
+    }
+  }
+}

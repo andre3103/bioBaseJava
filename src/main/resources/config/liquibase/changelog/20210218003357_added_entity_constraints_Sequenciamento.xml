@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Sequenciamento.
+    -->
+    <changeSet id="20210218003357-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="id_sample_id"
+                                 baseTableName="sequenciamento"
+                                 constraintName="fk_sequenciamento_id_sample_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="gerencia_id"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_placa_id"
+                                 baseTableName="sequenciamento"
+                                 constraintName="fk_sequenciamento_id_placa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="placa"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,176 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-collection-data-heading" jhiTranslate="bioBaseApplicationApp.collectionData.home.createOrEditLabel">Create or edit a Collection Data</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.collector" for="field_collector">Collector</label>
+                    <input type="text" class="form-control" name="collector" id="field_collector"
+                           formControlName="collector"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.collectionDate" for="field_collectionDate">Collection Date</label>
+                    <div class="input-group">
+                        <input id="field_collectionDate" type="text" class="form-control" name="collectionDate" ngbDatepicker #collectionDateDp="ngbDatepicker" formControlName="collectionDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="collectionDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.countryOcean" for="field_countryOcean">Country Ocean</label>
+                    <input type="text" class="form-control" name="countryOcean" id="field_countryOcean"
+                           formControlName="countryOcean"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.stateProvince" for="field_stateProvince">State Province</label>
+                    <input type="text" class="form-control" name="stateProvince" id="field_stateProvince"
+                           formControlName="stateProvince"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.region" for="field_region">Region</label>
+                    <input type="text" class="form-control" name="region" id="field_region"
+                           formControlName="region"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.sector" for="field_sector">Sector</label>
+                    <input type="text" class="form-control" name="sector" id="field_sector"
+                           formControlName="sector"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.exactSite" for="field_exactSite">Exact Site</label>
+                    <input type="text" class="form-control" name="exactSite" id="field_exactSite"
+                           formControlName="exactSite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.identif" for="field_identif">Identif</label>
+                    <input type="text" class="form-control" name="identif" id="field_identif"
+                           formControlName="identif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.latitude" for="field_latitude">Latitude</label>
+                    <input type="text" class="form-control" name="latitude" id="field_latitude"
+                           formControlName="latitude"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.longitude" for="field_longitude">Longitude</label>
+                    <input type="text" class="form-control" name="longitude" id="field_longitude"
+                           formControlName="longitude"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.elevation" for="field_elevation">Elevation</label>
+                    <input type="text" class="form-control" name="elevation" id="field_elevation"
+                           formControlName="elevation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.depth" for="field_depth">Depth</label>
+                    <input type="text" class="form-control" name="depth" id="field_depth"
+                           formControlName="depth"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.elevationPrecision" for="field_elevationPrecision">Elevation Precision</label>
+                    <input type="text" class="form-control" name="elevationPrecision" id="field_elevationPrecision"
+                           formControlName="elevationPrecision"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.depthPrecision" for="field_depthPrecision">Depth Precision</label>
+                    <input type="text" class="form-control" name="depthPrecision" id="field_depthPrecision"
+                           formControlName="depthPrecision"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.gpsSource" for="field_gpsSource">Gps Source</label>
+                    <input type="text" class="form-control" name="gpsSource" id="field_gpsSource"
+                           formControlName="gpsSource"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.coordinateAccuracy" for="field_coordinateAccuracy">Coordinate Accuracy</label>
+                    <input type="text" class="form-control" name="coordinateAccuracy" id="field_coordinateAccuracy"
+                           formControlName="coordinateAccuracy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.eventTime" for="field_eventTime">Event Time</label>
+                    <input type="text" class="form-control" name="eventTime" id="field_eventTime"
+                           formControlName="eventTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.collectionDateOccuracy" for="field_collectionDateOccuracy">Collection Date Occuracy</label>
+                    <input type="text" class="form-control" name="collectionDateOccuracy" id="field_collectionDateOccuracy"
+                           formControlName="collectionDateOccuracy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.habitat" for="field_habitat">Habitat</label>
+                    <input type="text" class="form-control" name="habitat" id="field_habitat"
+                           formControlName="habitat"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.samplingProtocol" for="field_samplingProtocol">Sampling Protocol</label>
+                    <input type="text" class="form-control" name="samplingProtocol" id="field_samplingProtocol"
+                           formControlName="samplingProtocol"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.collectionNotes" for="field_collectionNotes">Collection Notes</label>
+                    <input type="text" class="form-control" name="collectionNotes" id="field_collectionNotes"
+                           formControlName="collectionNotes"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.siteCode" for="field_siteCode">Site Code</label>
+                    <input type="text" class="form-control" name="siteCode" id="field_siteCode"
+                           formControlName="siteCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.collectionEventId" for="field_collectionEventId">Collection Event Id</label>
+                    <input type="text" class="form-control" name="collectionEventId" id="field_collectionEventId"
+                           formControlName="collectionEventId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.collectionData.voucherInfo" for="field_voucherInfo">Voucher Info</label>
+                    <select class="form-control" id="field_voucherInfo" name="voucherInfo" formControlName="voucherInfo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="voucherInfoOption.id === editForm.get('voucherInfo')!.value?.id ? editForm.get('voucherInfo')!.value : voucherInfoOption" *ngFor="let voucherInfoOption of voucherinfos; trackBy: trackById">{{ voucherInfoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="taxonomy">
+            <h2><span jhiTranslate="bioBaseApplicationApp.taxonomy.detail.title">Taxonomy</span> {{ taxonomy.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.phylum">Phylum</span></dt>
+                <dd>
+                    <span>{{ taxonomy.phylum }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.tclass">Tclass</span></dt>
+                <dd>
+                    <span>{{ taxonomy.tclass }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.torder">Torder</span></dt>
+                <dd>
+                    <span>{{ taxonomy.torder }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.family">Family</span></dt>
+                <dd>
+                    <span>{{ taxonomy.family }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.subfamily">Subfamily</span></dt>
+                <dd>
+                    <span>{{ taxonomy.subfamily }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.genus">Genus</span></dt>
+                <dd>
+                    <span>{{ taxonomy.genus }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.specie">Specie</span></dt>
+                <dd>
+                    <span>{{ taxonomy.specie }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.identif">Identif</span></dt>
+                <dd>
+                    <span>{{ taxonomy.identif }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.identifierEmail">Identifier Email</span></dt>
+                <dd>
+                    <span>{{ taxonomy.identifierEmail }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.identifierInstitution">Identifier Institution</span></dt>
+                <dd>
+                    <span>{{ taxonomy.identifierInstitution }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.identificationMethod">Identification Method</span></dt>
+                <dd>
+                    <span>{{ taxonomy.identificationMethod }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.taxonomyNotes">Taxonomy Notes</span></dt>
+                <dd>
+                    <span>{{ taxonomy.taxonomyNotes }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.taxonomy.voucherInfo">Voucher Info</span></dt>
+                <dd>
+                    <div *ngIf="taxonomy.voucherInfo">
+                        <a [routerLink]="['/voucher-info', taxonomy.voucherInfo?.id, 'view']">{{ taxonomy.voucherInfo?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/taxonomy', taxonomy.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

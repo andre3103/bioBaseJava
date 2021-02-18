@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="bioBaseApplicationApp.imageData.home.title">Image Data</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-image-data" [routerLink]="['/image-data/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="bioBaseApplicationApp.imageData.home.createLabel">
+            Create a new Image Data
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="imageData?.length === 0">
+        <span jhiTranslate="bioBaseApplicationApp.imageData.home.notFound">No imageData found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="imageData && imageData.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.nameImage">Name Image</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.imageFile">Image File</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.originalSpecimen">Original Specimen</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.viewMetadata">View Metadata</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.caption">Caption</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.measurement">Measurement</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.measurementType">Measurement Type</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.processId">Process Id</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.licenseHolder">License Holder</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.license">License</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.licenseYear">License Year</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.licenseInstitution">License Institution</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.licenseContact">License Contact</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.photographer">Photographer</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.imageData.idSample">Id Sample</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let imageData of imageData ;trackBy: trackId">
+                    <td><a [routerLink]="['/image-data', imageData.id, 'view']">{{ imageData.id }}</a></td>
+                    <td>{{ imageData.nameImage }}</td>
+                    <td>{{ imageData.imageFile }}</td>
+                    <td>{{ imageData.originalSpecimen }}</td>
+                    <td>{{ imageData.viewMetadata }}</td>
+                    <td>{{ imageData.caption }}</td>
+                    <td>{{ imageData.measurement }}</td>
+                    <td>{{ imageData.measurementType }}</td>
+                    <td>{{ imageData.processId }}</td>
+                    <td>{{ imageData.licenseHolder }}</td>
+                    <td>{{ imageData.license }}</td>
+                    <td>{{ imageData.licenseYear }}</td>
+                    <td>{{ imageData.licenseInstitution }}</td>
+                    <td>{{ imageData.licenseContact }}</td>
+                    <td>{{ imageData.photographer }}</td>
+                    <td>
+                        <div *ngIf="imageData.idSample">
+                            <a [routerLink]="['/gerencia-id', imageData.idSample?.id, 'view']" >{{ imageData.idSample?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/image-data', imageData.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/image-data', imageData.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(imageData)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "Entrega",
+  "fields": [
+    {
+      "fieldName": "loginName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210218002757",
+  "entityTableName": "entrega",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

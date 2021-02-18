@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="bioBaseApplicationApp.placa.home.title">Placas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-placa" [routerLink]="['/placa/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="bioBaseApplicationApp.placa.home.createLabel">
+            Create a new Placa
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="placas?.length === 0">
+        <span jhiTranslate="bioBaseApplicationApp.placa.home.notFound">No placas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="placas && placas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.placa.dataMontagem">Data Montagem</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.placa.marcador">Marcador</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.placa.sequencia">Sequencia</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.placa.data">Data</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.placa.status">Status</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let placa of placas ;trackBy: trackId">
+                    <td><a [routerLink]="['/placa', placa.id, 'view']">{{ placa.id }}</a></td>
+                    <td>{{ placa.dataMontagem | date:'mediumDate' }}</td>
+                    <td>{{ placa.marcador }}</td>
+                    <td>{{ placa.sequencia }}</td>
+                    <td>{{ placa.data | date:'mediumDate' }}</td>
+                    <td>{{ placa.status }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/placa', placa.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/placa', placa.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(placa)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

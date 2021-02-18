@@ -1,0 +1,23 @@
+{
+  "bioBaseApplicationApp": {
+    "recebimento": {
+      "home": {
+        "title": "Recebimentos",
+        "createLabel": "Create a new Recebimento",
+        "createOrEditLabel": "Create or edit a Recebimento",
+        "notFound": "No Recebimentos found"
+      },
+      "created": "A new Recebimento is created with identifier {{ param }}",
+      "updated": "A Recebimento is updated with identifier {{ param }}",
+      "deleted": "A Recebimento is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Recebimento {{ id }}?"
+      },
+      "detail": {
+        "title": "Recebimento"
+      },
+      "loginName": "Login Name",
+      "data": "Data"
+    }
+  }
+}

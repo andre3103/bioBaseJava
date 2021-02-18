@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="imageData">
+            <h2><span jhiTranslate="bioBaseApplicationApp.imageData.detail.title">Image Data</span> {{ imageData.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.nameImage">Name Image</span></dt>
+                <dd>
+                    <span>{{ imageData.nameImage }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.imageFile">Image File</span></dt>
+                <dd>
+                    <span>{{ imageData.imageFile }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.originalSpecimen">Original Specimen</span></dt>
+                <dd>
+                    <span>{{ imageData.originalSpecimen }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.viewMetadata">View Metadata</span></dt>
+                <dd>
+                    <span>{{ imageData.viewMetadata }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.caption">Caption</span></dt>
+                <dd>
+                    <span>{{ imageData.caption }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.measurement">Measurement</span></dt>
+                <dd>
+                    <span>{{ imageData.measurement }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.measurementType">Measurement Type</span></dt>
+                <dd>
+                    <span>{{ imageData.measurementType }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.processId">Process Id</span></dt>
+                <dd>
+                    <span>{{ imageData.processId }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.licenseHolder">License Holder</span></dt>
+                <dd>
+                    <span>{{ imageData.licenseHolder }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.license">License</span></dt>
+                <dd>
+                    <span>{{ imageData.license }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.licenseYear">License Year</span></dt>
+                <dd>
+                    <span>{{ imageData.licenseYear }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.licenseInstitution">License Institution</span></dt>
+                <dd>
+                    <span>{{ imageData.licenseInstitution }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.licenseContact">License Contact</span></dt>
+                <dd>
+                    <span>{{ imageData.licenseContact }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.photographer">Photographer</span></dt>
+                <dd>
+                    <span>{{ imageData.photographer }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.imageData.idSample">Id Sample</span></dt>
+                <dd>
+                    <div *ngIf="imageData.idSample">
+                        <a [routerLink]="['/gerencia-id', imageData.idSample?.id, 'view']">{{ imageData.idSample?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/image-data', imageData.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

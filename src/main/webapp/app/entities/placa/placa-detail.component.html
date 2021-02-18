@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="placa">
+            <h2><span jhiTranslate="bioBaseApplicationApp.placa.detail.title">Placa</span> {{ placa.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bioBaseApplicationApp.placa.dataMontagem">Data Montagem</span></dt>
+                <dd>
+                    <span>{{ placa.dataMontagem }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.placa.marcador">Marcador</span></dt>
+                <dd>
+                    <span>{{ placa.marcador }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.placa.sequencia">Sequencia</span></dt>
+                <dd>
+                    <span>{{ placa.sequencia }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.placa.data">Data</span></dt>
+                <dd>
+                    <span>{{ placa.data }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.placa.status">Status</span></dt>
+                <dd>
+                    <span>{{ placa.status }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/placa', placa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sequenciamento">
+            <h2><span jhiTranslate="bioBaseApplicationApp.sequenciamento.detail.title">Sequenciamento</span> {{ sequenciamento.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bioBaseApplicationApp.sequenciamento.posiao">Posiao</span></dt>
+                <dd>
+                    <span>{{ sequenciamento.posiao }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.sequenciamento.status">Status</span></dt>
+                <dd>
+                    <span>{{ sequenciamento.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.sequenciamento.idSample">Id Sample</span></dt>
+                <dd>
+                    <div *ngIf="sequenciamento.idSample">
+                        <a [routerLink]="['/gerencia-id', sequenciamento.idSample?.id, 'view']">{{ sequenciamento.idSample?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="bioBaseApplicationApp.sequenciamento.idPlaca">Id Placa</span></dt>
+                <dd>
+                    <div *ngIf="sequenciamento.idPlaca">
+                        <a [routerLink]="['/placa', sequenciamento.idPlaca?.id, 'view']">{{ sequenciamento.idPlaca?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sequenciamento', sequenciamento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="bioBaseApplicationApp.collectionData.home.title">Collection Data</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-collection-data" [routerLink]="['/collection-data/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="bioBaseApplicationApp.collectionData.home.createLabel">
+            Create a new Collection Data
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="collectionData?.length === 0">
+        <span jhiTranslate="bioBaseApplicationApp.collectionData.home.notFound">No collectionData found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="collectionData && collectionData.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.collector">Collector</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.collectionDate">Collection Date</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.countryOcean">Country Ocean</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.stateProvince">State Province</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.region">Region</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.sector">Sector</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.exactSite">Exact Site</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.identif">Identif</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.latitude">Latitude</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.longitude">Longitude</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.elevation">Elevation</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.depth">Depth</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.elevationPrecision">Elevation Precision</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.depthPrecision">Depth Precision</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.gpsSource">Gps Source</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.coordinateAccuracy">Coordinate Accuracy</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.eventTime">Event Time</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.collectionDateOccuracy">Collection Date Occuracy</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.habitat">Habitat</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.samplingProtocol">Sampling Protocol</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.collectionNotes">Collection Notes</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.siteCode">Site Code</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.collectionEventId">Collection Event Id</span></th>
+                    <th scope="col" ><span jhiTranslate="bioBaseApplicationApp.collectionData.voucherInfo">Voucher Info</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let collectionData of collectionData ;trackBy: trackId">
+                    <td><a [routerLink]="['/collection-data', collectionData.id, 'view']">{{ collectionData.id }}</a></td>
+                    <td>{{ collectionData.collector }}</td>
+                    <td>{{ collectionData.collectionDate | date:'mediumDate' }}</td>
+                    <td>{{ collectionData.countryOcean }}</td>
+                    <td>{{ collectionData.stateProvince }}</td>
+                    <td>{{ collectionData.region }}</td>
+                    <td>{{ collectionData.sector }}</td>
+                    <td>{{ collectionData.exactSite }}</td>
+                    <td>{{ collectionData.identif }}</td>
+                    <td>{{ collectionData.latitude }}</td>
+                    <td>{{ collectionData.longitude }}</td>
+                    <td>{{ collectionData.elevation }}</td>
+                    <td>{{ collectionData.depth }}</td>
+                    <td>{{ collectionData.elevationPrecision }}</td>
+                    <td>{{ collectionData.depthPrecision }}</td>
+                    <td>{{ collectionData.gpsSource }}</td>
+                    <td>{{ collectionData.coordinateAccuracy }}</td>
+                    <td>{{ collectionData.eventTime }}</td>
+                    <td>{{ collectionData.collectionDateOccuracy }}</td>
+                    <td>{{ collectionData.habitat }}</td>
+                    <td>{{ collectionData.samplingProtocol }}</td>
+                    <td>{{ collectionData.collectionNotes }}</td>
+                    <td>{{ collectionData.siteCode }}</td>
+                    <td>{{ collectionData.collectionEventId }}</td>
+                    <td>
+                        <div *ngIf="collectionData.voucherInfo">
+                            <a [routerLink]="['/voucher-info', collectionData.voucherInfo?.id, 'view']" >{{ collectionData.voucherInfo?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/collection-data', collectionData.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/collection-data', collectionData.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(collectionData)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

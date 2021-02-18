@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-placa-heading" jhiTranslate="bioBaseApplicationApp.placa.home.createOrEditLabel">Create or edit a Placa</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.placa.dataMontagem" for="field_dataMontagem">Data Montagem</label>
+                    <div class="input-group">
+                        <input id="field_dataMontagem" type="text" class="form-control" name="dataMontagem" ngbDatepicker #dataMontagemDp="ngbDatepicker" formControlName="dataMontagem"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataMontagemDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.placa.marcador" for="field_marcador">Marcador</label>
+                    <input type="text" class="form-control" name="marcador" id="field_marcador"
+                           formControlName="marcador"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.placa.sequencia" for="field_sequencia">Sequencia</label>
+                    <input type="text" class="form-control" name="sequencia" id="field_sequencia"
+                           formControlName="sequencia"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.placa.data" for="field_data">Data</label>
+                    <div class="input-group">
+                        <input id="field_data" type="text" class="form-control" name="data" ngbDatepicker #dataDp="ngbDatepicker" formControlName="data"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.placa.status" for="field_status">Status</label>
+                    <input type="number" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                    <div *ngIf="editForm.get('status')!.invalid && (editForm.get('status')!.dirty || editForm.get('status')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('status')?.errors?.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 1 }">
+                            This field cannot be more than 1.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('status')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

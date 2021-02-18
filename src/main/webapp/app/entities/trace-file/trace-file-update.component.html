@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-trace-file-heading" jhiTranslate="bioBaseApplicationApp.traceFile.home.createOrEditLabel">Create or edit a Trace File</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.traceFile.dirPhd" for="field_dirPhd">Dir Phd</label>
+                    <input type="text" class="form-control" name="dirPhd" id="field_dirPhd"
+                           formControlName="dirPhd"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.traceFile.dirAb" for="field_dirAb">Dir Ab</label>
+                    <input type="text" class="form-control" name="dirAb" id="field_dirAb"
+                           formControlName="dirAb"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.traceFile.idSample" for="field_idSample">Id Sample</label>
+                    <select class="form-control" id="field_idSample" name="idSample" formControlName="idSample">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="gerenciaIdOption.id === editForm.get('idSample')!.value?.id ? editForm.get('idSample')!.value : gerenciaIdOption" *ngFor="let gerenciaIdOption of idsamples; trackBy: trackById">{{ gerenciaIdOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bioBaseApplicationApp.traceFile.idSequenciamento" for="field_idSequenciamento">Id Sequenciamento</label>
+                    <select class="form-control" id="field_idSequenciamento" name="idSequenciamento" formControlName="idSequenciamento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sequenciamentoOption.id === editForm.get('idSequenciamento')!.value?.id ? editForm.get('idSequenciamento')!.value : sequenciamentoOption" *ngFor="let sequenciamentoOption of idsequenciamentos; trackBy: trackById">{{ sequenciamentoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
