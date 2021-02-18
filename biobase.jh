@@ -7,17 +7,17 @@ entity GerenciaId {
 
 entity Entrega {
 	loginName String,
-    data Date
+    data LocalDate
 }
 
 entity Recebimento {
 	loginName String,
-    data Date
+    data LocalDate
 }
 
 entity VoucherInfo {
 	loginName String,
-    data Date
+    data LocalDate
 }
 
 entity Taxonomy {
@@ -37,7 +37,7 @@ entity Taxonomy {
 
 entity CollectionData {
 	collector String,
-    collectionDate Date,
+    collectionDate LocalDate,
     countryOcean String,
     stateProvince String,
     region String,    
@@ -63,8 +63,8 @@ entity CollectionData {
 
 entity Barcode {
 	marcador String,
-    sequencia TextBlob,
-    data Date
+    sequencia String,
+    data LocalDate
 }
 
 entity Sequenciamento {
@@ -73,10 +73,10 @@ entity Sequenciamento {
 }
 
 entity Placa {
-	dataMontagem Data,
+	dataMontagem LocalDate,
 	marcador String,
-    sequencia TextBlob,
-    data Date,
+    sequencia String,
+    data LocalDate,
     status Integer max(1)
 }
 
